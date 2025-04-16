@@ -68,13 +68,11 @@ ln -s /var/root /root
 
 #### Example for enabling a System Unit File
 
-systemctl enable --now supergfxd.service 
-systemctl disable --now nvidia-persistenced
+systemctl enable supergfxd.service 
+systemctl disable nvidia-persistenced
 systemctl mask nvidia-persistenced
 
 # edit gpu switching config to enable seamless hotplug
-cd /etc 
-ls
 touch /etc/supergfxd.conf
 echo '{
 “mode”: “Hybrid”,
