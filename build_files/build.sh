@@ -57,9 +57,7 @@ cd /tmp
 git clone https://github.com/cfgnunes/nautilus-scripts.git
 cd nautilus-scripts
 touch script.exp
-echo '#!/usr/bin/expect -f
-
-set timeout -1
+echo 'set timeout -1
 spawn bash install.sh
 match_max 100000
 expect -exact "Scripts installer.\r
@@ -84,8 +82,7 @@ expect -exact "^[\[54;1H\[ \] Install basic dependencies.^[\[55;1H\[ \] Install 
 send -- " "
 expect -exact "^[\[54;1H\[ \] Install basic dependencies.^[\[55;1H\[ \] Install keyboard shortcuts.^[\[56;1H\[ \]>
 send -- "\r"
-expect eof
-' >> /tmp/nautilus-scripts/script.exp
+expect eof' >> /tmp/nautilus-scripts/script.exp
 chmod +x script.exp
 ./script.exp
 
