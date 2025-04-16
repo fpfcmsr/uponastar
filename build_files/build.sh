@@ -11,7 +11,7 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 
-#install packages for dolphin shortcuts
+#install packages for dolphin shortcuts + expect for bash noninteractive
 dnf5 install -y jpegoptim optipng pandoc qpdf recoll  xclip expect
 
 #microsoft fonts install
