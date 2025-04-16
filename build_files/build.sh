@@ -60,8 +60,8 @@ rm /tmp/nautilus-scripts/install.sh
 cp /ctx/install.sh /tmp/nautilus-scripts/install.sh
 chmod +x install.sh
 
-rm /opt
-mkdir /opt
+rm /root
+mkdir /root
 bash install.sh
 mv /root /usr/share/factory
 ln -s /var/root /root
