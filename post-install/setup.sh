@@ -1,15 +1,15 @@
 #!/bin/bash
-ujust dx-group
+sudo ujust dx-group
 
 mkdir /home/$user/Documents/SYSTEM-EDITS
 git clone https://github.com/cfgnunes/nautilus-scripts.git /home/$user/Documents/SYSTEM-EDITS
 cp nautilus-install.sh /home/$user/Documents/SYSTEM-EDITS/nautilus-scripts
-bash nautilus-install.sh
+sudo bash nautilus-install.sh
 
 # edit gpu switching config to enable seamless hotplug
-rm /etc/supergfxd.conf
-touch /etc/supergfxd.conf
-echo '{
+sudo rm /etc/supergfxd.conf
+sudo touch /etc/supergfxd.conf
+sudo echo '{
 “mode”: “Hybrid”,
 “vfio_enable”: true,
 “vfio_save”: false,
