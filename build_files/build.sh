@@ -58,7 +58,7 @@ ls
 cd /tmp
 git clone https://github.com/cfgnunes/nautilus-scripts.git
 cd /tmp/nautilus-scripts
-mv /ctx/script.exp /tmp/nautilus-scripts
+cp /ctx/script.exp /tmp/nautilus-scripts/script.exp
 ./script.exp
 dnf5 uninstall -y expect
 
