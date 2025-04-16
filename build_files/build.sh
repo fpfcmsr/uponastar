@@ -69,7 +69,6 @@ ln -s /var/root /root
 #### Example for enabling a System Unit File
 
 systemctl enable supergfxd.service 
-systemctl start supergfxd.service 
 systemctl disable nvidia-persistenced
 systemctl mask nvidia-persistenced
 
