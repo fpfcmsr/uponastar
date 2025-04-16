@@ -74,7 +74,6 @@ systemctl disable nvidia-persistenced
 systemctl mask nvidia-persistenced
 
 # edit gpu switching config to enable seamless hotplug
-rm /etc/supergfxd.conf
 touch /etc/supergfxd.conf
 echo '{
 “mode”: “Hybrid”,
