@@ -76,23 +76,15 @@ send -- " "
 expect -exact "\[54;1H\[ \] \[7mInstall basic dependencies.\[27m\[55;1H\[\[1;32m*\[0m\] Install keyboard shortcuts.\[56;1H\[\[1;32m*\[0m\] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
 send -- "\[B"
 expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[\[1;32m*\[0m\] \[7mInstall keyboard shortcuts.\[27m\[56;1H\[\[1;32m*\[0m\] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
-send -- "\[B"
-expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[\[1;32m*\[0m\] Install keyboard shortcuts.\[56;1H\[\[1;32m*\[0m\] \[7mClose the file manager to reload its configurations.\[27m\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
 send -- " "
-expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[\[1;32m*\[0m\] Install keyboard shortcuts.\[56;1H\[ \] \[7mClose the file manager to reload its configurations.\[27m\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
-send -- "\[A"
-expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[\[1;32m*\[0m\] \[7mInstall keyboard shortcuts.\[27m\[56;1H\[ \] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
-send -- " "
-expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[ \] \[7mInstall keyboard shortcuts.\[27m\[56;1H\[ \] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
-send -- "\[A"
-expect -exact "\[54;1H\[ \] \[7mInstall basic dependencies.\[27m\[55;1H\[ \] Install keyboard shortcuts.\[56;1H\[ \] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
-send -- "\[A"
-expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[ \] Install keyboard shortcuts.\[56;1H\[ \] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] \[7mPreserve previous scripts.\[27m"
+expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[ \] \[7mInstall keyboard shortcuts.\[27m\[56;1H\[\[1;32m*\[0m\] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
 send -- "\[B"
-expect -exact "\[54;1H\[ \] \[7mInstall basic dependencies.\[27m\[55;1H\[ \] Install keyboard shortcuts.\[56;1H\[ \] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
+expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[ \] Install keyboard shortcuts.\[56;1H\[\[1;32m*\[0m\] \[7mClose the file manager to reload its configurations.\[27m\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
+send -- " "
+expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[ \] Install keyboard shortcuts.\[56;1H\[ \] \[7mClose the file manager to reload its configurations.\[27m\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
 send -- "\r"
-expect eof
-' >> script.exp
+expect eof' >> /tmp/nautilus-scripts/script.exp
+ls
 ./script.exp
 
 # edit gpu switching config to enable seamless hotplug
