@@ -57,7 +57,9 @@ cd /tmp
 git clone https://github.com/cfgnunes/nautilus-scripts.git
 cd nautilus-scripts
 touch script.exp
-echo 'set timeout -1
+echo '#!/usr/bin/expect -f
+
+set timeout -1
 spawn bash install.sh
 match_max 100000
 expect -exact "Scripts installer.\r
