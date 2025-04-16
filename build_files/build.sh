@@ -51,12 +51,14 @@ curl --retry 3 -Lo /tmp/rpms/brmfcfaxdrv-2.0.2-1.x86_64.rpm "https://download.br
 dnf5 install -y /tmp/rpms/*
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
+cd /
+ls
 
 # install dolphin helper scripts
 cd /tmp
 git clone https://github.com/cfgnunes/nautilus-scripts.git
 cd /tmp/nautilus-scripts
-
+mv /ctx/script.exp /tmp/nautilus-scripts
 ./script.exp
 dnf5 uninstall -y expect
 
