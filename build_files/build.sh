@@ -58,9 +58,8 @@ ls
 cd /tmp
 git clone https://github.com/cfgnunes/nautilus-scripts.git
 cd /tmp/nautilus-scripts
-cp /ctx/script.exp /tmp/nautilus-scripts/script.exp
+mv /ctx/script.exp /tmp/nautilus-scripts
 ./script.exp
-dnf5 uninstall -y expect
 
 # edit gpu switching config to enable seamless hotplug
 rm /etc/supergfxd.conf
