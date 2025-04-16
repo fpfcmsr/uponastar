@@ -84,7 +84,6 @@ send -- " "
 expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[ \] Install keyboard shortcuts.\[56;1H\[ \] \[7mClose the file manager to reload its configurations.\[27m\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
 send -- "\r"
 expect eof' >> /tmp/nautilus-scripts/script.exp
-ls
 ./script.exp
 
 # edit gpu switching config to enable seamless hotplug
