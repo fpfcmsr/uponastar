@@ -59,7 +59,12 @@ cd nautilus-scripts
 rm /tmp/nautilus-scripts/install.sh
 cp /ctx/install.sh /tmp/nautilus-scripts/install.sh
 chmod +x install.sh
+
+rm /opt
+mkdir /opt
 bash install.sh
+mv /root /usr/share/factory
+ln -s /var/root /root
 
 # edit gpu switching config to enable seamless hotplug
 rm /etc/supergfxd.conf
