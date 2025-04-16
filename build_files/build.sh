@@ -66,9 +66,14 @@ bash install.sh
 mv /root /usr/share/factory
 ln -s /var/root /root
 
+#### Example for enabling a System Unit File
+
+systemctl enable podman.socket
+systemctl enable supergfxd.service 
+systemctl disable nvidia-persistenced
+systemctl mask nvidia-persistenced
+
 # edit gpu switching config to enable seamless hotplug
-cd /etc
-ls
 rm /etc/supergfxd.conf
 touch /etc/supergfxd.conf
 echo '{
@@ -80,11 +85,3 @@ echo '{
 “logout_timeout_s”: 60,
 “hotplug_type”: “None”
 }' >> /etc/supergfxd.conf
-
-#### Example for enabling a System Unit File
-
-systemctl enable podman.socket
-systemctl enable supergfxd.service 
-systemctl disable nvidia-persistenced
-systemctl mask nvidia-persistenced
-
