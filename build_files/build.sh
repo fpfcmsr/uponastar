@@ -22,22 +22,10 @@ dnf5 -y copr enable zeno/scrcpy
 dnf5 install -y scrcpy 
 dnf5 -y copr disable zeno/scrcpy
 
-#copr install webapp manager from bazzite
+# install webapp manager from bazzite
 dnf5 -y copr enable bazzite-org/webapp-manager
 dnf5 -y install webapp-manager 
 dnf5 -y copr disable bazzite-org/webapp-manager
-
-#copr install kde-kup for backups
-#dnf5 -y copr enable justinz/kup
-#dnf5 install kde-kup
-#dnf5 -y copr disable justinz/kup
-
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
 
 #install specific brother printers
 rm /opt
@@ -52,34 +40,7 @@ dnf5 install -y /tmp/rpms/*
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
 
-# install dolphin helper scripts
-cd /tmp
-git clone https://github.com/cfgnunes/nautilus-scripts.git
-cd nautilus-scripts
-rm /tmp/nautilus-scripts/install.sh
-cp /ctx/install.sh /tmp/nautilus-scripts/install.sh
-chmod +x install.sh
-
-rm /root
-mkdir /root
-bash install.sh
-mv /root /usr/share/factory
-ln -s /var/root /root
-
-#### Example for enabling a System Unit File
-
+#### Enabling a System Unit File
 systemctl enable supergfxd.service 
 systemctl disable nvidia-persistenced
 systemctl mask nvidia-persistenced
-
-# edit gpu switching config to enable seamless hotplug
-touch /etc/supergfxd.conf
-echo '{
-“mode”: “Hybrid”,
-“vfio_enable”: true,
-“vfio_save”: false,
-“always_reboot”: false,
-“no_logind”: true,
-“logout_timeout_s”: 60,
-“hotplug_type”: “Asus”
-}' >> /etc/supergfxd.conf
