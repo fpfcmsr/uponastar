@@ -52,6 +52,12 @@ dnf5 install -y /tmp/rpms/*
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
 
+# install dolphin helper scripts
+cd /tmp
+git clone https://github.com/cfgnunes/nautilus-scripts.git
+cd /tmp/nautilus-scripts
+bash install.sh
+
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
