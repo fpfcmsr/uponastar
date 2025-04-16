@@ -58,6 +58,7 @@ git clone https://github.com/cfgnunes/nautilus-scripts.git
 cd nautilus-scripts
 touch script.exp
 echo '#!/usr/bin/expect -f
+
 set timeout -1
 spawn bash install.sh
 match_max 100000
@@ -69,21 +70,22 @@ Select the options (<SPACE> to select, <UP/DOWN> to choose):\r
 \r
 \r
 \r
-\[6n"
-send -- "\[59;1R"
-expect -exact "\[?25l\[54;1H\[\[1;32m*\[0m\] \[7mInstall basic dependencies.\[27m\[55;1H\[\[1;32m*\[0m\] Install keyboard shortcuts.\[56;1H\[\[1;32m*\[0m\] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
+^[\[6n"
+send -- "^[\[59;1R"
+expect -exact "^[\[?25l^[\[54;1H\[^[\[1;32m*^[\[0m\] ^[\[7mInstall basic dependencies.^[\[27m^[\[55;1H\[^[\[1;32m>
 send -- " "
-expect -exact "\[54;1H\[ \] \[7mInstall basic dependencies.\[27m\[55;1H\[\[1;32m*\[0m\] Install keyboard shortcuts.\[56;1H\[\[1;32m*\[0m\] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
-send -- "\[B"
-expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[\[1;32m*\[0m\] \[7mInstall keyboard shortcuts.\[27m\[56;1H\[\[1;32m*\[0m\] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
+expect -exact "^[\[54;1H\[ \] ^[\[7mInstall basic dependencies.^[\[27m^[\[55;1H\[^[\[1;32m*^[\[0m\] Install keybo>
+send -- "^[\[B"
+expect -exact "^[\[54;1H\[ \] Install basic dependencies.^[\[55;1H\[^[\[1;32m*^[\[0m\] ^[\[7mInstall keyboard sho>
 send -- " "
-expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[ \] \[7mInstall keyboard shortcuts.\[27m\[56;1H\[\[1;32m*\[0m\] Close the file manager to reload its configurations.\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
-send -- "\[B"
-expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[ \] Install keyboard shortcuts.\[56;1H\[\[1;32m*\[0m\] \[7mClose the file manager to reload its configurations.\[27m\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
+expect -exact "^[\[54;1H\[ \] Install basic dependencies.^[\[55;1H\[ \] ^[\[7mInstall keyboard shortcuts.^[\[27m^>
+send -- "^[\[B"
+expect -exact "^[\[54;1H\[ \] Install basic dependencies.^[\[55;1H\[ \] Install keyboard shortcuts.^[\[56;1H\[^[\>
 send -- " "
-expect -exact "\[54;1H\[ \] Install basic dependencies.\[55;1H\[ \] Install keyboard shortcuts.\[56;1H\[ \] \[7mClose the file manager to reload its configurations.\[27m\[57;1H\[ \] Choose script categories to install.\[58;1H\[ \] Preserve previous scripts."
+expect -exact "^[\[54;1H\[ \] Install basic dependencies.^[\[55;1H\[ \] Install keyboard shortcuts.^[\[56;1H\[ \]>
 send -- "\r"
-expect eof' >> /tmp/nautilus-scripts/script.exp
+expect eof
+' >> /tmp/nautilus-scripts/script.exp
 chmod +x script.exp
 ./script.exp
 
