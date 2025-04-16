@@ -67,6 +67,8 @@ mv /root /usr/share/factory
 ln -s /var/root /root
 
 # edit gpu switching config to enable seamless hotplug
+cd /etc
+ls
 rm /etc/supergfxd.conf
 touch /etc/supergfxd.conf
 echo '{
