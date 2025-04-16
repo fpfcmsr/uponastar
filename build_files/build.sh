@@ -12,7 +12,7 @@ set -ouex pipefail
 # this installs a package from fedora repos
 
 #install packages for dolphin shortcuts
-dnf5 install -y jpegoptim optipng pandoc qpdf recoll  xclip
+dnf5 install -y jpegoptim optipng pandoc qpdf recoll  xclip expect
 
 #microsoft fonts install
 dnf5 install -y mscore-fonts-all 
@@ -56,7 +56,22 @@ ln -s /var/opt /opt
 cd /tmp
 git clone https://github.com/cfgnunes/nautilus-scripts.git
 cd /tmp/nautilus-scripts
-bash install.sh
+
+./script.exp
+dnf5 uninstall -y expect
+
+# edit gpu switching config to enable seamless hotplug
+rm /etc/supergfxd.conf
+touch /etc/supergfxd.conf
+echo "{
+“mode”: “Hybrid”,
+“vfio_enable”: true,
+“vfio_save”: false,
+“always_reboot”: false,
+“no_logind”: true,
+“logout_timeout_s”: 60,
+“hotplug_type”: “None”
+}" >> /etc/supergfxd.conf
 
 #### Example for enabling a System Unit File
 
