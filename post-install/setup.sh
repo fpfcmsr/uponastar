@@ -9,8 +9,8 @@ mkdir /home/$user/Documents/SYSTEM-EDITS
 git clone https://github.com/cfgnunes/nautilus-scripts.git /home/$user/Documents/SYSTEM-EDITS
 sudo bash /home/$user/Documents/SYSTEM-EDITS/nautilus-scriptsinstall.sh
 
-ujust configure-vfio
-ujust configure-vfio
+ujust configure-vfio # enable vfio
+ujust configure-vfio # setup looking glass
 
 sudo ujust configure-nvidia
 sudo ujust configure-nvidia-optimus
