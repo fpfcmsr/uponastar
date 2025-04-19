@@ -43,3 +43,4 @@ konsave -i ~/aurora.knsv
 sudo touch /etc/udev/rules.d/99-kvmfr.rules 
 sudo echo 'SUBSYSTEM=="kvmfr", OWNER="user", GROUP="kvm", MODE="0660"' >> /etc/udev/rules.d/99-kvmfr.rules
 # get $user -> replace user with $user here: 'SUBSYSTEM=="kvmfr", OWNER="user", GROUP="kvm", MODE="0660"'
+# todo next: Edit the file /etc/libvirt/qemu.conf and uncomment the cgroup_device_acl block, adding /dev/kvmfr0 to the list. To make this change active you then must restart libvirtd
