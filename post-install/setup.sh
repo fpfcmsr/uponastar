@@ -18,3 +18,5 @@ sudo echo '{
 “logout_timeout_s”: 60,
 “hotplug_type”: “Asus”
 }' >> /etc/supergfxd.conf
+
+yes | cp ~/kde-settings /home/$user/.config
