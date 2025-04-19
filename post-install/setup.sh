@@ -35,3 +35,8 @@ sudo echo '{
 # restore kde settings 
 python -m pip install konsave
 konsave -i ~/aurora.knsv
+
+# setting up looking glass
+sudo touch /etc/udev/rules.d/99-kvmfr.rules 
+sudo echo 'SUBSYSTEM=="kvmfr", OWNER="user", GROUP="kvm", MODE="0660"' >> /etc/udev/rules.d/99-kvmfr.rules
+# get $user -> replace user with $user here: 'SUBSYSTEM=="kvmfr", OWNER="user", GROUP="kvm", MODE="0660"'
