@@ -44,6 +44,3 @@ ln -s /var/opt /opt
 systemctl enable supergfxd.service 
 systemctl disable nvidia-persistenced
 systemctl mask nvidia-persistenced
-
-# set initramfs to regen
-rpm-ostree initramfs --enable
