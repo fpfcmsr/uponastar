@@ -32,6 +32,9 @@ sudo echo '{
 “hotplug_type”: “Asus”
 }' >> /etc/supergfxd.conf
 
+# set initramfs to regen
+rpm-ostree initramfs --enable
+
 # restore kde settings 
 python -m pip install konsave
 konsave -i ~/aurora.knsv
