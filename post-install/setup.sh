@@ -1,10 +1,23 @@
 #!/bin/bash
-sudo ujust dx-group
+# interactive stuff first
+ujust setup-luks-tpm-unlock
+ujust aurora-cli
+ujust configure-grub
+ujust regenerate-grub
 
 mkdir /home/$user/Documents/SYSTEM-EDITS
 git clone https://github.com/cfgnunes/nautilus-scripts.git /home/$user/Documents/SYSTEM-EDITS
-cp nautilus-install.sh /home/$user/Documents/SYSTEM-EDITS/nautilus-scripts
-sudo bash nautilus-install.sh
+sudo bash /home/$user/Documents/SYSTEM-EDITS/nautilus-scriptsinstall.sh
+
+ujust configure-vfio
+ujust configure-vfio
+
+sudo ujust configure-nvidia
+sudo ujust configure-nvidia-optimus
+
+# things that can run in the background without user input
+sudo ujust dx-group # add stuff to virtualization group
+ujust install-gaming-flatpaks
 
 # edit gpu switching config to enable seamless hotplug
 sudo rm /etc/supergfxd.conf
@@ -19,4 +32,6 @@ sudo echo '{
 “hotplug_type”: “Asus”
 }' >> /etc/supergfxd.conf
 
-yes | cp ~/kde-settings /home/$user/.config
+# restore kde settings 
+python -m pip install konsave
+konsave -i ~/aurora.knsv
