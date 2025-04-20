@@ -44,3 +44,6 @@ ln -s /var/opt /opt
 systemctl enable supergfxd.service 
 systemctl disable nvidia-persistenced
 systemctl mask nvidia-persistenced
+
+# change name of applications to more sensible things
+sed -i 's/Name=Dolphin/Name=File Manager/g' /usr/local/share/applications/org.kde.dolphin.desktop
