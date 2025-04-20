@@ -45,5 +45,18 @@ systemctl enable supergfxd.service
 systemctl disable nvidia-persistenced
 systemctl mask nvidia-persistenced
 
+# edit supergfd.conf
+rm /usr/share/factory/etc/supergfxd.conf
+touch /usr/share/factory/etc/supergfxd.conf
+echo '{
+“mode”: “Hybrid”,
+“vfio_enable”: true,
+“vfio_save”: false,
+“always_reboot”: false,
+“no_logind”: true,
+“logout_timeout_s”: 60,
+“hotplug_type”: “Asus”
+}' >> /usr/share/factory/etc/supergfxd.conf
+
 # change name of applications to more sensible things
 #sed -i 's/Name=Dolphin/Name=File Manager/g' /usr/local/share/applications/org.kde.dolphin.desktop
