@@ -14,6 +14,9 @@ set -ouex pipefail
 #install packages for dolphin shortcuts + expect for bash noninteractive
 dnf5 install -y jpegoptim optipng pandoc qpdf recoll  xclip expect
 
+# install btrfs assistant
+dnf5 install -y btrfs-assistant
+
 #microsoft fonts install
 dnf5 install -y mscore-fonts-all 
 
