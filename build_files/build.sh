@@ -47,11 +47,3 @@ curl --retry 3 -Lo /tmp/rpms/brmfcfaxdrv-2.0.2-1.x86_64.rpm "https://download.br
 dnf5 install -y /tmp/rpms/*
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
-
-#### Enabling a System Unit File
-systemctl enable supergfxd.service 
-systemctl disable nvidia-persistenced
-systemctl mask nvidia-persistenced
-
-# change name of applications to more sensible things
-#sed -i 's/Name=Dolphin/Name=File Manager/g' /usr/local/share/applications/org.kde.dolphin.desktop
