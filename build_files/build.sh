@@ -48,6 +48,8 @@ dnf5 install -y /tmp/rpms/*
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
 
+dnf5 install git cmake extra-cmake-modules gcc-g++ qt6-qtbase-devel kwin-devel kf6-ki18n-devel kf6-kguiaddons-devel kf6-kcmutils-devel kf6-kconfigwidgets-devel qt6-qtbase kf6-kguiaddons kf6-ki18n wayland-devel yaml-cpp yaml-cpp-devel libepoxy-devel
+
 # install touch gestures
 cd /tmp
 git clone https://github.com/taj-ny/kwin-gestures
@@ -57,3 +59,5 @@ cd build
 cmake ../ -DCMAKE_INSTALL_PREFIX=/usr
 make
 make install
+#dnf5 uninstall cmake extra-cmake-modules gcc-g++ qt6-qtbase-devel kwin-devel kf6-ki18n-devel kf6-kguiaddons-devel kf6-kcmutils-devel kf6-kconfigwidgets-devel qt6-qtbase kf6-kguiaddons kf6-ki18n wayland-devel yaml-cpp yaml-cpp-devel libepoxy-devel
+
