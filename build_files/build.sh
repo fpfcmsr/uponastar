@@ -47,3 +47,13 @@ curl --retry 3 -Lo /tmp/rpms/brmfcfaxdrv-2.0.2-1.x86_64.rpm "https://download.br
 dnf5 install -y /tmp/rpms/*
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
+
+# install touch gestures
+cd /tmp
+git clone https://github.com/taj-ny/kwin-gestures
+cd kwin-gestures
+mkdir build
+cd build
+cmake ../ -DCMAKE_INSTALL_PREFIX=/usr
+make
+make install
