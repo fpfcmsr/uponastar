@@ -12,13 +12,16 @@ set -ouex pipefail
 # this installs a package from fedora repos
 
 #install packages for dolphin shortcuts + expect for bash noninteractive
-dnf5 install -y jpegoptim optipng pandoc qpdf recoll  xclip expect
+dnf5 -y install jpegoptim optipng pandoc qpdf recoll  xclip expect
 
 # install btrfs assistant
-dnf5 install -y btrfs-assistant
+dnf5 -y install btrfs-assistant
 
 #microsoft fonts install
-dnf5 install -y mscore-fonts-all 
+dnf5 -y install mscore-fonts-all 
+
+# install zed editor
+dnf5 -y install zed
 
 #for phone integration via usb
 dnf5 -y copr enable zeno/scrcpy
