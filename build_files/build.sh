@@ -19,6 +19,7 @@ dnf5 -y install btrfs-assistant
 
 #microsoft fonts install
 dnf5 -y install mscore-fonts-all 
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # install zed editor
 dnf5 -y config-manager setopt "terra*".enabled=true
