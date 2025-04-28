@@ -1,5 +1,5 @@
 version: "1"
 rules:
   - base: master
-    upstream: ublue-os:image-template # change `wei` to the owner of upstream repo
+    upstream: fpfcmsr:uponastar # change `wei` to the owner of upstream repo
     mergeMethod: hardreset
