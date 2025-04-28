@@ -1,5 +1,8 @@
 #!/bin/bash
 # interactive stuff first
+sudo etckeeper init
+sudo etckeeper commit "first commit"
+
 ujust setup-luks-tpm-unlock
 ujust aurora-cli
 ujust configure-grub
