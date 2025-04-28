@@ -21,7 +21,7 @@ dnf5 -y install btrfs-assistant
 dnf5 -y install mscore-fonts-all 
 
 # install zed editor
-dnf5 -y install zed
+curl -f https://zed.dev/install.sh | sh
 
 #for phone integration via usb
 dnf5 -y copr enable zeno/scrcpy
