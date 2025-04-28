@@ -3,8 +3,8 @@
 set -ouex pipefail
 
 # delete symlinks so packages can be installed to the directories
-rm /root
-mkdir /root
+#rm /root
+#mkdir /root
 
 rm /opt
 mkdir /opt
@@ -22,9 +22,14 @@ dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
 rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # install zed editor
-dnf5 -y config-manager setopt "terra*".enabled=true
-dnf5 -y install zed
-dnf5 -y config-manager setopt "terra*".enabled=false
+#dnf5 -y config-manager setopt "terra*".enabled=true
+#dnf5 -y install zed
+#dnf5 -y config-manager setopt "terra*".enabled=false
+
+#setup etckeeper
+etckeeper commit "first commit"
+etckeeper init
+etckeeper commit "first commit"
 
 #for phone integration via usb
 dnf5 -y copr enable zeno/scrcpy
@@ -51,8 +56,9 @@ curl --retry 3 -Lo /tmp/rpms/brmfcfaxdrv-2.0.2-1.x86_64.rpm "https://download.br
 dnf5 install -y /tmp/rpms/*
 
 # move installed packages to the right location
-mv /root /usr/share/factory
-ln -s /var/root /root
+#mv /root /usr/share/factory
+#ln -s /var/root /root
 
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
+
