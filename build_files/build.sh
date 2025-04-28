@@ -27,9 +27,7 @@ rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-font
 #dnf5 -y config-manager setopt "terra*".enabled=false
 
 #setup etckeeper
-etckeeper commit "first commit"
-etckeeper init
-etckeeper commit "first commit"
+dnf5 -y install etckeeper 
 
 #for phone integration via usb
 dnf5 -y copr enable zeno/scrcpy
