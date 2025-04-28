@@ -21,7 +21,9 @@ dnf5 -y install btrfs-assistant
 dnf5 -y install mscore-fonts-all 
 
 # install zed editor
-curl -f https://zed.dev/install.sh | sh
+dnf5 -y config-manager setopt "terra*".enabled=true
+dnf5 -y install zed
+dnf5 -y config-manager setopt "terra*".enabled=false
 
 #for phone integration via usb
 dnf5 -y copr enable zeno/scrcpy
@@ -46,19 +48,6 @@ curl --retry 3 -Lo /tmp/rpms/brscan-skey-0.3.2-0.x86_64.rpm "https://download.br
 curl --retry 3 -Lo /tmp/rpms/brother-udev-rule-type1-1.0.2-0.noarch.rpm "https://download.brother.com/welcome/dlf103900/brother-udev-rule-type1-1.0.2-0.noarch.rpm"
 curl --retry 3 -Lo /tmp/rpms/brmfcfaxdrv-2.0.2-1.x86_64.rpm "https://download.brother.com/welcome/dlf105190/brmfcfaxdrv-2.0.2-1.x86_64.rpm"
 dnf5 install -y /tmp/rpms/*
-
-dnf5 -y install git cmake extra-cmake-modules gcc-g++ qt6-qtbase-devel kwin-devel kf6-ki18n-devel kf6-kguiaddons-devel kf6-kcmutils-devel kf6-kconfigwidgets-devel qt6-qtbase kf6-kguiaddons kf6-ki18n wayland-devel yaml-cpp yaml-cpp-devel libepoxy-devel
-
-# install touch gestures
-cd /tmp
-git clone https://github.com/taj-ny/kwin-gestures
-cd kwin-gestures
-mkdir build
-cd build
-cmake ../ -DCMAKE_INSTALL_PREFIX=/usr
-make
-make install
-dnf5 -y remove cmake extra-cmake-modules qt6-qtbase-devel kwin-devel kf6-ki18n-devel kf6-kguiaddons-devel kf6-kcmutils-devel kf6-kconfigwidgets-devel wayland-devel yaml-cpp yaml-cpp-devel libepoxy-devel
 
 # move installed packages to the right location
 mv /root /usr/share/factory
