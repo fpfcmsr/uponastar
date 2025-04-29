@@ -4,6 +4,9 @@ set -ouex pipefail
 
 ### Install packages
 
+rm /opt
+mkdir /opt
+
 #install packages for dolphin shortcuts + expect for bash noninteractive
 dnf5 -y install jpegoptim optipng pandoc qpdf recoll  xclip expect
 
@@ -49,9 +52,6 @@ dnf5 install -y /tmp/rpms/*
 #dnf5 -y install zed
 #dnf5 -y config-manager setopt "terra*".enabled=false
 
-# for stuff that writes to /opt ??? unsure
-# rm /opt
-# mkdir /opt
-# mv /opt /usr/share/factory
-# ln -s /var/opt /opt
-
+rm -rf /opt
+mkdir /opt
+ln -s /var/opt /opt
