@@ -47,3 +47,10 @@ sudo touch /etc/udev/rules.d/99-kvmfr.rules
 sudo echo 'SUBSYSTEM=="kvmfr", OWNER="user", GROUP="kvm", MODE="0660"' >> /etc/udev/rules.d/99-kvmfr.rules
 # get $user -> replace user with $user here: 'SUBSYSTEM=="kvmfr", OWNER="user", GROUP="kvm", MODE="0660"'
 # todo next: Edit the file /etc/libvirt/qemu.conf and uncomment the cgroup_device_acl block, adding /dev/kvmfr0 to the list. To make this change active you then must restart libvirtd
+
+
+# setup brother udev rules
+curl --retry 3 -Lo ~/brother-udev-rule-type1-1.0.2-0.noarch.rpm "https://download.brother.com/welcome/dlf103900/brother-udev-rule-type1-1.0.2-0.noarch.rpm"
+rpm2cpio brother-udev-rule-type1-1.0.2-0.noarch.rpm | cpio -idmv
+cp ~/opt/opt/brother/scanner/udev-rules/type1/NN-brother-mfp-type1.rules ~/65-brother-libsane-type1.rules
+sudo mv ~/65-brother-libsane-type1.rules /etc/udev/rules.d/
