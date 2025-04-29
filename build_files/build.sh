@@ -13,10 +13,6 @@ dnf5 -y install jpegoptim optipng pandoc qpdf recoll  xclip expect
 # install btrfs assistant
 dnf5 -y install btrfs-assistant
 
-#microsoft fonts install
-dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
-rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-
 #setup etckeeper
 dnf5 -y install etckeeper 
 
@@ -55,3 +51,7 @@ dnf5 install -y /tmp/rpms/*
 rm -rf /opt
 mkdir /opt
 ln -s /var/opt /opt
+
+#microsoft fonts install
+dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
+rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
