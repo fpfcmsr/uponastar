@@ -9,6 +9,9 @@ mkdir /opt
 #install packages for dolphin shortcuts + expect for bash noninteractive
 dnf5 -y install jpegoptim optipng pandoc qpdf recoll  xclip expect
 
+# install dependencies for winapps
+dnf5 -y install curl dialog freerdp git iproute libnotify nmap-ncat
+
 # install btrfs assistant
 dnf5 -y install btrfs-assistant
 
