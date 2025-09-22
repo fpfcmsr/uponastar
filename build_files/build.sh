@@ -12,16 +12,22 @@ dnf5 -y install jpegoptim optipng pandoc qpdf recoll  xclip expect
 # install dependencies for winapps
 dnf5 -y install curl dialog freerdp git iproute libnotify nmap-ncat
 
+# install KLASSY
+dnf5 -y copr enable errornointernet/klassy
+dnf5 -y install klassy
+dnf5 -y copr disable errornointernet/klassy
+
+
 # install btrfs assistant
-dnf5 -y install btrfs-assistant
+#dnf5 -y install btrfs-assistant
 
 #setup etckeeper
-dnf5 -y install etckeeper 
+#dnf5 -y install etckeeper 
 
 #for phone integration via usb
-dnf5 -y copr enable zeno/scrcpy
-dnf5 install -y scrcpy 
-dnf5 -y copr disable zeno/scrcpy
+#dnf5 -y copr enable zeno/scrcpy
+#dnf5 install -y scrcpy 
+#dnf5 -y copr disable zeno/scrcpy
 
 # install webapp manager from bazzite
 dnf5 -y copr enable bazzite-org/webapp-manager
