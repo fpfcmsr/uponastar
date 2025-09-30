@@ -10,7 +10,9 @@ mkdir /opt
 dnf5 -y install jpegoptim optipng pandoc qpdf recoll  xclip expect 
 
 # utilities useful
-dnf5 -y install touchegg
+#dnf5 -y install touchegg
+
+dnf5 -y remove ptyxis
 
 # install dependencies for winapps
 dnf5 -y install curl dialog freerdp git iproute libnotify nmap-ncat
