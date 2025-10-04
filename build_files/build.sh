@@ -8,7 +8,7 @@ mkdir /opt
 
 #install packages for dolphin shortcuts
 #brew install jpegoptim optipng pandoc qpdf  xclip foremost rdfind rhash testdisk
-dnf5 -y install recoll perl-Image-ExifTool # the others can be installed with brew
+dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others can be installed with brew
 
 #utilities
 dnf5 -y install speech-dispatcher android-tools
