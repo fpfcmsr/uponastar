@@ -19,6 +19,10 @@ dnf5 -y install speech-dispatcher android-tools
 #remove unwanted stuff
 dnf5 -y remove ptyxis code
 
+# fix fonts
+dnf5 -y remove google-noto-*
+dnf5 -y install google-droid-fonts-all
+
 # install KLASSY
 dnf5 -y copr enable errornointernet/klassy
 dnf5 -y install klassy
@@ -74,8 +78,8 @@ mv /opt /usr/share/factory
 ln -s /var/opt /opt
 
 #microsoft fonts install
-dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
-rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+#dnf5 -y install mscore-fonts-all xorg-x11-font-utils cabextract fontconfig
+#rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 
 ### Things not currently included but may revisit
