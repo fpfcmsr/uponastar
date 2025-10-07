@@ -11,9 +11,9 @@ set -ouex pipefail
 #dnf5 -y install speech-dispatcher android-tools konsole
 
 #remove unwanted stuff
-#dnf5 -y remove google-noto-*
+dnf5 -y remove google-noto-*
 
-#dnf5 -y install google-droid-fonts-all
+dnf5 -y install google-droid-fonts-all
 
 # install KLASSY
 #dnf5 -y copr enable errornointernet/klassy
@@ -30,11 +30,11 @@ dnf config-manager addrepo --from-repofile="https://download.opensuse.org/reposi
 dnf5 -y install --setopt=install_weak_deps=False klassy
 
 #copr install webapp manager from bazzite
-#dnf5 -y copr enable bazzite-org/webapp-manager
-#dnf5 -y install webapp-manager 
-#dnf5 -y copr disable bazzite-org/webapp-manager
+dnf5 -y copr enable bazzite-org/webapp-manager
+dnf5 -y install webapp-manager 
+dnf5 -y copr disable bazzite-org/webapp-manager
 
 #vapor theme for kde from bazzite
-#dnf5 -y copr enable bazzite-org/bazzite
-#dnf5 -y install steamdeck-kde-presets-desktop
-#dnf5 -y copr disable bazzite-org/bazzite
+dnf5 -y copr enable bazzite-org/bazzite
+dnf5 -y install steamdeck-kde-presets-desktop
+dnf5 -y copr disable bazzite-org/bazzite
