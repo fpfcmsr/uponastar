@@ -17,7 +17,7 @@ dnf5 -y install speech-dispatcher android-tools
 #dnf5 -y install touchegg
 
 #remove unwanted stuff
-dnf5 -y remove ptyxis code
+dnf5 -y remove ptyxis
 
 # fix fonts
 dnf5 -y remove google-noto-*
@@ -50,7 +50,7 @@ mkdir /tmp/rpms
 URL=$(curl -s https://api.github.com/repos/bitwarden/clients/releases | jq -r 'first(.[] | .assets[]? | select(.browser_download_url | endswith(".rpm")) | .browser_download_url)')
 echo "Downloading Bitwarden from $URL"
 curl -sL -o /tmp/rpms/bitwarden-latest.rpm "$URL"
-#bitwarden policy file
+bitwarden policy file
 touch /usr/share/polkit-1/actions/com.bitwarden.Bitwarden.policy
 echo '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE policyconfig PUBLIC
