@@ -11,7 +11,6 @@ dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others 
 dnf5 -y install speech-dispatcher android-tools konsole
 
 #remove unwanted stuff
-dnf5 -y remove ptyxis
 dnf5 -y remove google-noto-*
 
 dnf5 -y install google-droid-fonts-all
@@ -21,7 +20,13 @@ dnf5 -y install google-droid-fonts-all
 #dnf -y install --setopt=install_weak_deps=False klassy
 #dnf5 -y copr disable errornointernet/klassy
 
-dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:paul4us/Fedora_42/home:paul4us.repo
+# Get the current Fedora version
+FEDORA_VERSION=$(rpm -E %fedora)
+
+# Add the repo using the detected Fedora version
+dnf config-manager addrepo --from-repofile="https://download.opensuse.org/repositories/home:paul4us/Fedora_${FEDORA_VERSION}/home:paul4us.repo"
+
+# Install the package with dnf5
 dnf5 -y install --setopt=install_weak_deps=False klassy
 
 #copr install webapp manager from bazzite
