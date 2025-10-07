@@ -5,15 +5,10 @@ set -ouex pipefail
 
 #install packages for dolphin shortcuts
 #brew install jpegoptim optipng pandoc qpdf  xclip foremost rdfind rhash testdisk
-#dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others can be installed with brew
+dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others can be installed with brew
 
 #utilities
-#dnf5 -y install speech-dispatcher android-tools konsole
-
-#remove unwanted stuff
-dnf5 -y remove google-noto-*
-
-dnf5 -y install google-droid-fonts-all
+dnf5 -y install speech-dispatcher android-tools konsole
 
 # install KLASSY
 #dnf5 -y copr enable errornointernet/klassy
