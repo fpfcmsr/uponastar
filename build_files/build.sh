@@ -8,7 +8,7 @@ mkdir /opt
 
 #install packages for dolphin shortcuts
 #brew install jpegoptim optipng pandoc qpdf  xclip foremost rdfind rhash testdisk
-dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others can be installed with brew
+#dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others can be installed with brew
 
 #utilities
 dnf5 -y install speech-dispatcher android-tools konsole
@@ -25,14 +25,14 @@ dnf5 -y install klassy
 dnf5 -y copr disable errornointernet/klassy
 
 #copr install webapp manager from bazzite
-dnf5 -y copr enable bazzite-org/webapp-manager
-dnf5 -y install webapp-manager 
-dnf5 -y copr disable bazzite-org/webapp-manager
+#dnf5 -y copr enable bazzite-org/webapp-manager
+#dnf5 -y install webapp-manager 
+#dnf5 -y copr disable bazzite-org/webapp-manager
 
 #vapor theme for kde from bazzite
-dnf5 -y copr enable bazzite-org/bazzite
-dnf5 -y install steamdeck-kde-presets-desktop
-dnf5 -y copr disable bazzite-org/bazzite
+#dnf5 -y copr enable bazzite-org/bazzite
+#dnf5 -y install steamdeck-kde-presets-desktop
+#dnf5 -y copr disable bazzite-org/bazzite
 
 mkdir /tmp/rpms
 
