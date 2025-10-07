@@ -21,13 +21,13 @@ set -ouex pipefail
 #dnf5 -y copr disable errornointernet/klassy
 
 # Get the current Fedora version
-#FEDORA_VERSION=$(rpm -E %fedora)
+FEDORA_VERSION=$(rpm -E %fedora)
 
 # Add the repo using the detected Fedora version
-#dnf config-manager addrepo --from-repofile="https://download.opensuse.org/repositories/home:paul4us/Fedora_${FEDORA_VERSION}/home:paul4us.repo"
+dnf config-manager addrepo --from-repofile="https://download.opensuse.org/repositories/home:paul4us/Fedora_${FEDORA_VERSION}/home:paul4us.repo"
 
 # Install the package with dnf5
-#dnf5 -y install --setopt=install_weak_deps=False klassy
+dnf5 -y install --setopt=install_weak_deps=False klassy
 
 #copr install webapp manager from bazzite
 #dnf5 -y copr enable bazzite-org/webapp-manager
