@@ -25,7 +25,7 @@ dnf5 -y install google-droid-fonts-all
 #dnf5 -y copr disable errornointernet/klassy
 
 dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:paul4us/Fedora_42/home:paul4us.repo
-dnf install klassy
+dnf5 -y install --setopt=install_weak_deps=False klassy
 
 #copr install webapp manager from bazzite
 dnf5 -y copr enable bazzite-org/webapp-manager
