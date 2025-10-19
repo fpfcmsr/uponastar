@@ -10,12 +10,6 @@ dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others 
 #utilities
 dnf5 -y install speech-dispatcher android-tools konsole
 
-# install KLASSY
-dnf5 -y copr enable errornointernet/klassy
-dnf -y install --setopt=install_weak_deps=False klassy
-dnf5 -y copr disable errornointernet/klassy
-dnf5 -y install adwaita-cursor-theme adwaita-icon-theme adwaita-icon-theme-legacy adwaita-gtk2-theme
-
 # Get the current Fedora version
 FEDORA_VERSION=$(rpm -E %fedora)
 
@@ -23,7 +17,8 @@ FEDORA_VERSION=$(rpm -E %fedora)
 dnf config-manager addrepo --from-repofile="https://download.opensuse.org/repositories/home:paul4us/Fedora_${FEDORA_VERSION}/home:paul4us.repo"
 
 # Install the package with dnf5
-dnf5 -y install --setopt=install_weak_deps=False klassy
+dnf5 -y install klassy
+dnf5 -y install adwaita-cursor-theme adwaita-icon-theme adwaita-icon-theme-legacy adwaita-gtk2-theme
 
 #copr install webapp manager from bazzite
 dnf5 -y copr enable bazzite-org/webapp-manager
