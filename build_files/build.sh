@@ -11,9 +11,10 @@ dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others 
 dnf5 -y install speech-dispatcher android-tools konsole
 
 # install KLASSY
-#dnf5 -y copr enable errornointernet/klassy
-#dnf -y install --setopt=install_weak_deps=False klassy
-#dnf5 -y copr disable errornointernet/klassy
+dnf5 -y copr enable errornointernet/klassy
+dnf -y install --setopt=install_weak_deps=False klassy
+dnf5 -y copr disable errornointernet/klassy
+dnf5 -y install adwaita-cursor-theme adwaita-icon-theme adwaita-icon-theme-legacy adwaita-gtk2-theme
 
 # Get the current Fedora version
 FEDORA_VERSION=$(rpm -E %fedora)
@@ -30,9 +31,9 @@ dnf5 -y install webapp-manager
 dnf5 -y copr disable bazzite-org/webapp-manager
 
 #vapor theme for kde from bazzite
-dnf5 -y copr enable bazzite-org/bazzite
-dnf5 -y install steamdeck-kde-presets-desktop
-dnf5 -y copr disable bazzite-org/bazzite
+#dnf5 -y copr enable bazzite-org/bazzite
+#dnf5 -y install steamdeck-kde-presets-desktop
+#dnf5 -y copr disable bazzite-org/bazzite
 
 rm /opt
 mkdir /opt
@@ -66,7 +67,6 @@ echo '<?xml version="1.0" encoding="UTF-8"?>
 dnf5 install -y /tmp/rpms/*
 
 #ensure things downloaded to /opt and /root are present in final image and clean up symlinks
-#mkdir /usr/share/factory/opt
 mv /opt /usr/share/factory
 ln -s /var/opt /opt
 ls -a /usr/share/factory/opt
