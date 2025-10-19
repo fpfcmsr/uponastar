@@ -18,17 +18,16 @@ dnf config-manager addrepo --from-repofile="https://download.opensuse.org/reposi
 
 # Install the package with dnf5
 dnf5 -y install klassy
-dnf5 -y install adwaita-cursor-theme adwaita-icon-theme adwaita-icon-theme-legacy adwaita-gtk2-theme libadwaita
 
 #copr install webapp manager from bazzite
 dnf5 -y copr enable bazzite-org/webapp-manager
 dnf5 -y install webapp-manager 
 dnf5 -y copr disable bazzite-org/webapp-manager
 
-#vapor theme for kde from bazzite
-#dnf5 -y copr enable bazzite-org/bazzite
-#dnf5 -y install steamdeck-kde-presets-desktop
-#dnf5 -y copr disable bazzite-org/bazzite
+#vapor theme for kde from bazzite (so we get good GTK theming)
+dnf5 -y copr enable bazzite-org/bazzite
+dnf5 -y install steamdeck-kde-presets-desktop
+dnf5 -y copr disable bazzite-org/bazzite
 
 rm /opt
 mkdir /opt
