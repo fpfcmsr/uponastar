@@ -18,7 +18,7 @@ dnf config-manager addrepo --from-repofile="https://download.opensuse.org/reposi
 
 # Install the package with dnf5
 dnf5 -y install klassy
-dnf5 -y install adwaita-cursor-theme adwaita-icon-theme adwaita-icon-theme-legacy adwaita-gtk2-theme
+dnf5 -y install adwaita-cursor-theme adwaita-icon-theme adwaita-icon-theme-legacy adwaita-gtk2-theme libadwaita
 
 #copr install webapp manager from bazzite
 dnf5 -y copr enable bazzite-org/webapp-manager
