@@ -9,6 +9,7 @@ dnf5 -y install recoll perl-Image-ExifTool texlive-pdfjam ocrmypdf # the others 
 
 #utilities
 dnf5 -y install speech-dispatcher android-tools konsole
+dnf5 -y remove ptyxis
 
 # Get the current Fedora version
 FEDORA_VERSION=$(rpm -E %fedora)
