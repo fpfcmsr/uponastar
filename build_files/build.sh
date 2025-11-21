@@ -58,6 +58,25 @@ echo '<?xml version="1.0" encoding="UTF-8"?>
     </action>
 </policyconfig>' > /usr/share/polkit-1/actions/com.bitwarden.Bitwarden.policy
 
+touch /usr/lib/systemd/user/speech-dispatcherd.service
+echo '[Unit]
+Description=Speech-Dispatcher, common interface to speech synthesizers
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/speech-dispatcher -d -t 0
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=default.target
+Alias=speech-dispatcher.service' > /usr/lib/systemd/user/speech-dispatcherd.service
+
+touch /usr/share/ublue-os/firefox-config/02-bluefin-speech.js
+
+echo '// Bluefin Speech Support
+pref("narrate.enabled", true);
+pref("narrate.filter-voices", false);' > /usr/share/ublue-os/firefox-config/02-bluefin-speech.js
+
 #install all the downloaded rpms
 dnf5 install -y /tmp/rpms/*
 
