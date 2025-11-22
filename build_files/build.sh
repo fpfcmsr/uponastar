@@ -77,7 +77,7 @@ echo '// Bluefin Speech Support
 pref("narrate.enabled", true);
 pref("narrate.filter-voices", false);' > /usr/share/ublue-os/firefox-config/02-bluefin-speech.js
 
-touch /usr/share/ublue-os/just/70-speech.just
+cd /usr/share/ublue-os/just
 
 echo '# Setup local speech support with Pied voices and speech-dispatcher
 [group('Apps')]
@@ -142,7 +142,9 @@ setup-speech-support ACTION="":
         echo "${red}${b}Speech support uninstalled${n}"
     else
         echo "Have a good day :)!"
-    fi' >> /usr/share/ublue-os/just/70-speech.just
+    fi' | cat - 60-custom.just > temp && mv temp 60-custom.just
+    
+cd /
 
 #install all the downloaded rpms
 dnf5 install -y /tmp/rpms/*
