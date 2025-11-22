@@ -143,7 +143,7 @@ setup-speech-support ACTION="":
     else
         echo "Have a good day :)!"
     fi' | cat - 60-custom.just > temp && mv temp 60-custom.just
-    
+just --init
 cd /
 
 #install all the downloaded rpms
